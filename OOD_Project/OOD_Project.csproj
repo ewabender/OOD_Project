@@ -55,7 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Create_Bird.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Landing_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,8 +71,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Create_Bird.xaml.cs">
+      <DependentUpon>Create_Bird.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Landing_Page.xaml.cs">
+      <DependentUpon>Landing_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginScreen.xaml.cs">
+      <DependentUpon>LoginScreen.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

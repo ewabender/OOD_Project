@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="124*"/>
+            <RowDefinition Height="173*"/>
+            <RowDefinition Height="137*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="205*"/>
+            <ColumnDefinition Width="412*"/>
+            <ColumnDefinition Width="205*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="tbxuser" Grid.Column="1" HorizontalAlignment="Left" Margin="53,13,0,0" TextWrapping="Wrap" Text="                Username" VerticalAlignment="Top" Width="303" FontFamily="Copperplate Gothic Bold" FontWeight="Bold" FontSize="23" Height="49" Grid.Row="1"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="53,91,0,0" Grid.Row="1" TextWrapping="Wrap" Text="                 Password" VerticalAlignment="Top" Width="303" FontFamily="Copperplate Gothic Bold" FontWeight="Bold" FontSize="23" Height="49"/>
+        <Button x:Name="btnlogin" Grid.Column="1" Content="Login" HorizontalAlignment="Left" Margin="49,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="307" Height="20"/>
+        <PasswordBox x:Name="tbxpasswd" Grid.Column="1" HorizontalAlignment="Left" Margin="53,140,0,0" Grid.Row="1" VerticalAlignment="Top" Width="303" Height="18"/>
+        <TextBox x:Name="tbxuserinput" Grid.Column="1" HorizontalAlignment="Left" Margin="51,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Height="24" Grid.Row="1"/>
+        <Image Source="/f0799ce52f1c4695ebf1910bdf4cd2f2.jpg" Stretch="Fill" Grid.Column="1"/>
+
     </Grid>
 </Window>

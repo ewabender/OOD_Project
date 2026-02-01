@@ -19,11 +19,13 @@
             <ColumnDefinition Width="167*"/>
         </Grid.ColumnDefinitions>
         <Image Grid.Column="1" Margin="10,0,10,44" Source="/f0799ce52f1c4695ebf1910bdf4cd2f2.jpg" Stretch="Fill"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,6,0,0" Grid.Row="2" TextWrapping="Wrap" Text="                 Password" VerticalAlignment="Top" Width="304" FontFamily="Copperplate Gothic Bold" FontWeight="Bold" FontSize="23" Height="27"/>
-        <PasswordBox x:Name="tbxpasswd" Grid.Column="1" HorizontalAlignment="Center" Margin="0,47,0,0" Grid.Row="2" VerticalAlignment="Top" Width="304" Height="26"/>
-        <TextBox x:Name="tbxuserinput" Grid.Column="1" HorizontalAlignment="Center" Margin="0,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="1"/>
-        <TextBlock x:Name="tbxuser_Copy" Grid.Column="1" HorizontalAlignment="Left" Margin="84,2,0,0" TextWrapping="Wrap" Text="                Username" VerticalAlignment="Top" Width="304" FontFamily="Copperplate Gothic Bold" FontWeight="Bold" FontSize="23" Height="30" Grid.Row="3"/>
-        <TextBox x:Name="tbxuserinput_Copy" Grid.Column="1" HorizontalAlignment="Left" Margin="82,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="3"/>
+        <TextBox Name="tbxCommonname" Text="Common Name"  Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="1" Margin="0,10,0,0"/>
+        <TextBox Name="tbxScientificName" Text="Scientific name" TextAlignment="Center" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="1" Margin="0,50,0,0"/>
+        <TextBox Name="tbxwhere" Grid.Column="1" Text="Where" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="2" Margin="0,10,0,0"/>
+        <Button Name="btnimg" Grid.Column="1" Content="Upload Image" HorizontalAlignment="Center" Height="28" Margin="0,117,0,0" VerticalAlignment="Top" Width="308"/>
+        <TextBox Name="tbxwhen" Grid.Column="1" Text="When" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="2" Margin="0,47,0,0"/>
+        <TextBox Name="tbxhowmany" Text="How many" TextAlignment="Center" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="2" Margin="0,93,0,0" Grid.RowSpan="2"/>
+        <Button Name="btncreatebird" Grid.Column="1" Content="Create!" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="177" Grid.Row="3"/>
 
     </Grid>
 </Window>

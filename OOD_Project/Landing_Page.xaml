@@ -16,12 +16,14 @@
             <ColumnDefinition Width="103*"/>
         </Grid.ColumnDefinitions>
         <Image Margin="10,10,10,10" Source="/gru-despicable-me.png" Stretch="Fill"/>
-        <RadioButton Grid.Column="1" Content="RadioButton" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top"/>
-        <ListBox Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,51,10,10" Grid.RowSpan="2"/>
-        <TextBox HorizontalAlignment="Center" Height="197" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="380" TextChanged="TextBox_TextChanged"/>
-        <RadioButton Grid.Column="1" Content="RadioButton" HorizontalAlignment="Left" Margin="100,31,0,0" VerticalAlignment="Top"/>
-        <RadioButton Grid.Column="1" Content="RadioButton" HorizontalAlignment="Left" Margin="190,31,0,0" VerticalAlignment="Top"/>
-        <RadioButton Grid.Column="1" Content="RadioButton" HorizontalAlignment="Left" Margin="280,31,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="rdEurope" Grid.Column="1" Content="Europe" HorizontalAlignment="Left" Margin="63,31,0,0" VerticalAlignment="Top"/>
+        <ListBox Name="lbshowbird" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,51,10,10" Grid.RowSpan="2"/>
+        <TextBox Name="tbdescribebird" HorizontalAlignment="Center" Height="197" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="380" TextChanged="TextBox_TextChanged"/>
+        <RadioButton Name="rdAmericas" Grid.Column="1" Content="Americas" HorizontalAlignment="Left" Margin="132,31,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="rdOceania"  Grid.Column="1" Content="Oceania" HorizontalAlignment="Left" Margin="213,31,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="rdAsia" Grid.Column="1" Content="Asia" HorizontalAlignment="Left" Margin="287,31,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="rdAfrica" Grid.Column="1" Content="Africa" HorizontalAlignment="Left" Margin="341,31,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="rdAll" Grid.Column="1" Content="All" HorizontalAlignment="Left" Margin="15,31,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

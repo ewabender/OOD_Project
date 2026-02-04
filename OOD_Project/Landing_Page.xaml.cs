@@ -23,5 +23,10 @@ namespace OOD_Project
         {
             InitializeComponent();
         }
+
+        private void btncreatebird_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

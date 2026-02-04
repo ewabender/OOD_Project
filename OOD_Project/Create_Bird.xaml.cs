@@ -23,5 +23,10 @@ namespace OOD_Project
         {
             InitializeComponent();
         }
+
+        private void btnback_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
+        }
     }
 }

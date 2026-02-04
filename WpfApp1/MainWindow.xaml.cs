@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OOD_Project
+namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class LoginScreen : Window
+    public partial class MainWindow : Window
     {
-        public LoginScreen()
+        public MainWindow()
         {
-            InitializedComponent();
-        }
-
-        private void btnlogin_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/Page2.xaml?key=value", UriKind.Relative));
+            InitializeComponent();
         }
     }
 }

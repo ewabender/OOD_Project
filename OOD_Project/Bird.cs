@@ -19,7 +19,7 @@ namespace OOD_Project
 
         public Bird()
         {
-           
+           // empty ctor 
         }
 
         protected Bird(string cnamne,string sname,string location, DateTime when, int numspotted )

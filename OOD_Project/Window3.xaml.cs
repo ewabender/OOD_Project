@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace OOD_Project
 {
     /// <summary>
-    /// Interaction logic for Landing_Page.xaml
+    /// Interaction logic for Window3.xaml
     /// </summary>
-    public partial class Landing_Page : Page
+    public partial class Window3 : Window
     {
-        public Landing_Page()
+        public Window3()
         {
             InitializeComponent();
-        }
-
-        private void btncreatebird_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

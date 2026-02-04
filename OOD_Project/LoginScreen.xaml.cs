@@ -18,16 +18,16 @@ namespace OOD_Project
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class LoginScreen : Window
+    public partial class MainWindow : Page
     {
-        public LoginScreen()
+        public MainWindow()
         {
-            InitializedComponent();
+            InitializeComponent();
         }
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Page2.xaml?key=value", UriKind.Relative));
+            
         }
     }
 }

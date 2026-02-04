@@ -17,7 +17,7 @@ namespace OOD_Project
     /// <summary>
     /// Interaction logic for Create_Bird.xaml
     /// </summary>
-    public partial class Create_Bird : Window
+    public partial class Create_Bird : Page
     {
         public Create_Bird()
         {
@@ -26,7 +26,7 @@ namespace OOD_Project
 
         private void btnback_Click(object sender, RoutedEventArgs e)
         {
-            Frame.GoBack();
+            
         }
     }
 }

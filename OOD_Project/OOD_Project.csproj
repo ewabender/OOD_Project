@@ -131,10 +131,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="gru-despicable-me.png" />
+    <Resource Include="f0799ce52f1c4695ebf1910bdf4cd2f2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="f0799ce52f1c4695ebf1910bdf4cd2f2.jpg" />
+    <Resource Include="boris-smokrovic-DPXytK8Z59Y-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="berd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tienko-dima-uYoVf9I6ANI-unsplash.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

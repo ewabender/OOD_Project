@@ -19,7 +19,6 @@
             <ColumnDefinition Width="469*"/>
             <ColumnDefinition Width="166*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="2" Margin="10,0,10,44" Source="/f0799ce52f1c4695ebf1910bdf4cd2f2.jpg" Stretch="Fill"/>
         <TextBox Name="tbxCommonname" Text="Common Name"  Grid.Column="2" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="1" Margin="0,10,0,0"/>
         <TextBox Name="tbxScientificName" Text="Scientific name" TextAlignment="Center" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="1" Margin="0,50,0,0"/>
         <TextBox Name="tbxwhere" Grid.Column="2" Text="Where" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="2" Margin="0,10,0,0"/>
@@ -28,6 +27,10 @@
         <TextBox Name="tbxhowmany" Text="How many" TextAlignment="Center" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="2" Margin="0,93,0,0" Grid.RowSpan="2"/>
         <Button Name="btncreatebird" Grid.Column="2" Content="Create!" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="176" Grid.Row="3"/>
         <Button Name="btnback" Content="Go Back" HorizontalAlignment="Left" Margin="31,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="24" Grid.Column="1" Click="btnback_Click"/>
+        <Image Margin="157,2,157,44" Source="/berd.png" Stretch="Fill" Grid.Column="2"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/tienko-dima-uYoVf9I6ANI-unsplash.jpg"></ImageBrush>
+        </Grid.Background>
 
     </Grid>
 </Page>

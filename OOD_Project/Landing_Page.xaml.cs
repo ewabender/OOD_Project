@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static OOD_Project.Landing_Page;
+using Newtonsoft.Json;
 
 namespace OOD_Project
 {
@@ -26,62 +27,28 @@ namespace OOD_Project
     /// </summary>
     public partial class Landing_Page : Page
     {
-        List<Bird> Birds = new List<Bird>();
+        List<JsonBird> AllBirds = new List<JsonBird>();
+
         public Landing_Page()
         {
             InitializeComponent();
         }
 
-        public class EBirdClient
-        {
-            private readonly HttpClient _httpClient;
-            public EBirdClient(string apiKey)
-            {
-                _httpClient = new HttpClient();
-                _httpClient.BaseAddress = new Uri("https://api.ebird.org/v2/");
-                _httpClient.DefaultRequestHeaders.Add("x-ebirdapitoken", apiKey);
-            }
-
-            public async Task<string> GetRecentObservations(string regionCode, int maxResults = 50)
-            {
-                string endpoint = $"data/obs/{regionCode}/recent?maxResults={maxResults}";
-                var response = await _httpClient.GetAsync(endpoint);
-                response.EnsureSuccessStatusCode();
-
-                return await response.Content.ReadAsStringAsync();
-            }
-
-            //how do I create objects from JSON + isolate specific thing and shove it to the bits of the part of the object
-            //ask keith
-
-
-            static async Task Main() // initiates api
-            {
-                string apiKey = "31ichicpcbi7";
-
-                var client = new EBirdClient(apiKey);
-                string json = await client.GetRecentObservations("IE"); // IE = Ireland
-
-            }
-
-            //static string PrettyPrintJson(string json)
-            //{
-            //    var node = JsonNode.Parse(json);
-            //    return node.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
-            //}
-
-        }
-
+        //Display certain properties
         private void lbshowbird_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (bird Bird in Birds)
-            {
 
-                Birds.Add(bird);
 
-            }
 
-            lbshowbird.ItemsSource = Birds;
+            ////common name
+            //StringBuilder sb = new StringBuilder();
+            //sb.AppendLine()
+
+            //    //location
+
+
+
+
         }
 
 
@@ -90,10 +57,7 @@ namespace OOD_Project
 
         }
 
-
-
     }
 
-
-
 }
+

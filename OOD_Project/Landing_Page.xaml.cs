@@ -1,28 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-//using System.Text.Json;
-//using System.Text.Json.Nodes;
-
-//ask keith
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static OOD_Project.Landing_Page;
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Nodes;
-using System.Text.Json.Serialization;
+using System.Windows.Navigation;
 
 namespace OOD_Project
 {
@@ -41,7 +22,7 @@ namespace OOD_Project
      
         async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            string apiKey = "31ichicpcbi7";  //add your api key here
+            string apiKey = "31ichicpcbi7";  
 
             EbirdClient client = new EbirdClient(apiKey);
 
@@ -58,6 +39,7 @@ namespace OOD_Project
 
             //selects the birds object 
             JsonBird Bird = lbshowbird.SelectedItem as JsonBird;
+
             //if the thing ain't null 
             if (Bird != null)
             {
@@ -69,10 +51,15 @@ namespace OOD_Project
 
         }
 
-
+        //implement a functionality when you can move between pages
         private void btncreatebird_Click(object sender, RoutedEventArgs e)
         {
+            //Source - https://stackoverflow.com/a/20807014
+            // Posted by Jake, modified by community. See post 'Timeline' for change history
+            // Retrieved 2026-02-11, License - CC BY-SA 4.0
 
+            Landing_Pg.Navigate(new Page());
+            this.NavigationService.Navigate(new Uri("Create_Bird.xaml", UriKind.Relative));
         }
 
         

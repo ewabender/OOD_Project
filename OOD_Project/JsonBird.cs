@@ -56,6 +56,7 @@ namespace OOD_Project
         public string[] birdimng { get; set; }
 
         // add an ability for the user to upload an image for the bird of their choice.
+        //keith said to make  the thingy hold the path instead of 1s + 0s
         public UserBird(string[] birdimng)
         {
             this.birdimng = birdimng;

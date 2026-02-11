@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Landing_Page" Height="450" Width="800" Loaded="Page_Loaded">
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="257*"/>
             <RowDefinition Height="257*"/>
@@ -21,10 +22,12 @@
         <RadioButton Name="rdUserMade" Grid.Column="1" Content="UserCreated" HorizontalAlignment="Left" Margin="132,31,0,0" VerticalAlignment="Top"/>
         <RadioButton Name="rdAll" Grid.Column="1" Content="All" HorizontalAlignment="Left" Margin="15,31,0,0" VerticalAlignment="Top"/>
         <Button Name="btndelbird" Grid.Column="1" Content="Delete an entry" HorizontalAlignment="Left" Margin="149,194,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24"/>
+        <Frame Name="Landing_Pg" NavigationUIVisibility="Hidden" />
         <Button Name="btncreatebird" Grid.Column="1" Content="Create a Bird!" HorizontalAlignment="Left" Margin="315,194,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Click="btncreatebird_Click"/>
         <Image Margin="10,10,10,10" Source="/boris-smokrovic-DPXytK8Z59Y-unsplash.jpg" Stretch="Fill"/>
         <Grid.Background>
             <ImageBrush ImageSource="/tienko-dima-uYoVf9I6ANI-unsplash.jpg"></ImageBrush>
         </Grid.Background>
+        
     </Grid>
 </Page>

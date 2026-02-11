@@ -38,15 +38,15 @@ namespace OOD_Project
         private void lbshowbird_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+            //selects the  object 
+            JsonBird Bird = lbshowbird.SelectedItem as JsonBird;
+            //this thing makes the albums display alongside the band
+            if (Bird != null)
+            {
 
-
-            ////common name
-            //StringBuilder sb = new StringBuilder();
-            //sb.AppendLine()
-
-            //    //location
-
-
+                //this displays info about the bird
+                tbdescribebird.Text = string.Format($"Common Name: {Bird.comName} \nScientific Name: {Bird.sciName} \nLocation: {Bird.locName} \nWhen: {Bird.obsDt} \nHow many: {Bird.howMany}");
+            }
 
 
         }

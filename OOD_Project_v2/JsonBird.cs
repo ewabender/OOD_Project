@@ -6,10 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace OOD_Project
+namespace OOD_Project_v2
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
-    public class JsonBird
+    public class JsonBird : IComparable
     {
         public string speciesCode { get; set; }
         public string comName { get; set; }
@@ -44,15 +44,25 @@ namespace OOD_Project
             
         }
 
+        public override string ToString()
+        {
+            return $"{comName}";
+        }
+
+        public int CompareTo(object obj)
+        {
+            JsonBird bird = obj as JsonBird;
+            return this.comName.CompareTo(bird.comName);
+        }
     }
 
     public class UserBird : JsonBird 
     {
         //user created bird entries come with the ability to add image, it can't be null
-        public string[] birdimng { get; set; }
+        public byte[] birdimng { get; set; }
 
         // add an ability for the user to upload an image for the bird of their choice.
-        public UserBird(string[] birdimng)
+        public UserBird(byte[] birdimng)
         {
             this.birdimng = birdimng;
         }

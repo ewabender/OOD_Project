@@ -43,6 +43,10 @@ namespace OOD_Project
             howMany = numspotted;
             
         }
+        public override string ToString()
+        {
+            return $"{comName}";
+        }
 
     }
 

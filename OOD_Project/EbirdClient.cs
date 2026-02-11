@@ -12,7 +12,6 @@ namespace OOD_Project
     {
 
         private readonly HttpClient _httpClient;
-        List<JsonBird> allBirds = new List<JsonBird>();
 
         public EbirdClient(string apiKey)
         {
@@ -34,22 +33,5 @@ namespace OOD_Project
         //ask keith
 
 
-        async Task GetBirdsFromAPI() // initiates api
-        {
-            string apiKey = "31ichicpcbi7";
-
-            var client = new EbirdClient(apiKey);
-            string json = await client.GetRecentObservations("IE"); // IE = Ireland
-
-
-
-            allBirds = JsonConvert.DeserializeObject<List<JsonBird>>(json);
-            //static string PrettyPrintJson(string json)
-            //{
-            //    var node = JsonNode.Parse(json);
-            //    return node.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
-            //}
-
-        }
     }
 }

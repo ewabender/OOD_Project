@@ -44,19 +44,8 @@ namespace OOD_Project_v2
             allBirds = JsonSerializer.Deserialize<List<JsonBird>>(json);
 
             lbxBirds.ItemsSource = allBirds;
-
-
-            //tblkInfo.Text = json;
-            //tblkInfo.Text = PrettyPrintJson(json);
-            //Console.WriteLine(json);
-            //Console.WriteLine(PrettyPrintJson(json));
         }
 
-        private string PrettyPrintJson(string json)
-        {
-            var node = JsonNode.Parse(json);
-            return node.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
-        }
 
         private void lbxBirds_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -73,25 +62,6 @@ namespace OOD_Project_v2
     }//end of MainWindow class
 
 
-    public class EBirdClient
-    {
-        private readonly HttpClient _httpClient;
-
-        public EBirdClient(string apiKey)
-        {
-            _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri("https://api.ebird.org/v2/");
-            _httpClient.DefaultRequestHeaders.Add("x-ebirdapitoken", apiKey);
-        }
-
-        //This method will return info from API as a string
-        public async Task<string> GetRecentObservations(string regionCode, int maxResults = 50)
-        {
-            string endpoint = $"data/obs/{regionCode}/recent?maxResults={maxResults}";
-            var response = await _httpClient.GetAsync(endpoint);
-            response.EnsureSuccessStatusCode();
-
-            return await response.Content.ReadAsStringAsync();
-        }
-    }
+   
+    
 }

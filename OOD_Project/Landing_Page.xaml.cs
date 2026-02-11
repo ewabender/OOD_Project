@@ -18,7 +18,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static OOD_Project.Landing_Page;
-using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 namespace OOD_Project
 {
@@ -34,13 +38,27 @@ namespace OOD_Project
             InitializeComponent();
         }
 
+     
+        async void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            string apiKey = "31ichicpcbi7";  //add your api key here
+
+            EbirdClient client = new EbirdClient(apiKey);
+
+            string json = await client.GetRecentObservations("IE"); // IE = Ireland
+
+
+            AllBirds = JsonSerializer.Deserialize<List<JsonBird>>(json);
+
+            lbshowbird.ItemsSource = AllBirds;
+        }
         //Display certain properties
         private void lbshowbird_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            //selects the  object 
+            //selects the birds object 
             JsonBird Bird = lbshowbird.SelectedItem as JsonBird;
-            //this thing makes the albums display alongside the band
+            //if the thing ain't null 
             if (Bird != null)
             {
 
@@ -57,6 +75,7 @@ namespace OOD_Project
 
         }
 
+        
     }
 
 }

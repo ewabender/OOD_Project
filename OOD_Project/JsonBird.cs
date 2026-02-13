@@ -9,7 +9,7 @@ using System.Drawing;
 namespace OOD_Project
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
-    public class JsonBird
+    public class JsonBird : IComparable
     {
         public string speciesCode { get; set; }
         public string comName { get; set; }
@@ -48,6 +48,11 @@ namespace OOD_Project
             return $"{comName}";
         }
 
+        public int CompareTo(object obj)
+        {
+            JsonBird bird = obj as JsonBird;
+            return this.comName.CompareTo(bird.comName);
+        }
     }
 
 

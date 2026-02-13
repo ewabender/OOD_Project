@@ -23,8 +23,11 @@ namespace OOD_Project
             InitializeComponent();
 
             //these 2 lines are solely here to show that radio btns are working
-            ShowKeithBird b1 = new ShowKeithBird() { comName = "Berd", sciName = "Stinky Stinky", howMany = 2 };
+            ShowKeithBird b1 = new ShowKeithBird() { comName = "Berd", sciName = "Stinky Stinky", howMany = 42 };
             AllBirdsU.Add(b1);
+
+            ShowKeithBird b2 = new ShowKeithBird() { comName = "Elsa", sciName = "Frozen Frozen", howMany = 62 };
+            AllBirdsU.Add(b2);
         }
 
         async void Page_Loaded(object sender, RoutedEventArgs e)
@@ -75,21 +78,23 @@ namespace OOD_Project
 
         }
 
-        private void rdAll_Checked(object sender, RoutedEventArgs e, IEnumerable<JsonBird> allBirdsJ)
+        private void rdAll_Checked(object sender, RoutedEventArgs e)
         {
-            var concatBird = allBirdsJ.Concat(AllBirdsU);
-            List<JsonBird> birds  = concatBird.ToList();
+            var concatBird = AllBirdsU.Concat(AllBirdsJ);
+            List<JsonBird> birds = concatBird.ToList();
             birds.Sort();
             lbshowbird.ItemsSource = birds;
         }
 
         private void rdAPI_Checked(object sender, RoutedEventArgs e)
         {
+            AllBirdsJ.Sort();
             lbshowbird.ItemsSource = AllBirdsJ;
         }
 
         private void rdUserMade_Checked(object sender, RoutedEventArgs e)
         {
+            AllBirdsU.Sort();
             lbshowbird.ItemsSource = AllBirdsU;
 
         }

@@ -89,6 +89,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Ree.cs" />
     <Compile Include="Wee.xaml.cs">
       <DependentUpon>Wee.xaml</DependentUpon>
     </Compile>

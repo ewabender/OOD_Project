@@ -26,7 +26,13 @@ namespace OOD_Project
 
         private void btnback_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            //Source - https://stackoverflow.com/a/20807014
+            // Posted by Jake, modified by community. See post 'Timeline' for change history
+            // Retrieved 2026-02-11, License - CC BY-SA 4.0
+
+            Create_Pg.Navigate(new Page());
+            this.NavigationService.Navigate(new Uri("Landing_Page.xaml", UriKind.Relative));
         }
     }
 }

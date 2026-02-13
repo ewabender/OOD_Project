@@ -145,9 +145,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="f0799ce52f1c4695ebf1910bdf4cd2f2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="boris-smokrovic-DPXytK8Z59Y-unsplash.jpg" />
   </ItemGroup>
   <ItemGroup>

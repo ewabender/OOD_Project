@@ -19,6 +19,9 @@ namespace OOD_Project
             InitializeComponent();
         }
 
+        bool Allchecked;
+        bool Databasechecked;
+        bool UserChecked;
      
         async void Page_Loaded(object sender, RoutedEventArgs e)
         {
@@ -62,7 +65,11 @@ namespace OOD_Project
             this.NavigationService.Navigate(new Uri("Create_Bird.xaml", UriKind.Relative));
         }
 
-        
+        private void btndelbird_Click(object sender, RoutedEventArgs e)
+        {
+            //delete an entry here
+           
+        }
     }
 
 }

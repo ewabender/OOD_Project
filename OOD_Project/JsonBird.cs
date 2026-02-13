@@ -24,16 +24,16 @@ namespace OOD_Project
         public bool obsReviewed { get; set; }
         public bool locationPrivate { get; set; }
         public string subId { get; set; }
-    
+
 
 
 
         public JsonBird()
         {
-           // empty ctor 
+            // empty ctor 
         }
 
-        protected JsonBird(string cnamne,string sname,string location, string when, int numspotted )
+        protected JsonBird(string cnamne, string sname, string location, string when, int numspotted)
         {
 
             comName = cnamne;
@@ -41,7 +41,7 @@ namespace OOD_Project
             locName = location;
             obsDt = when;
             howMany = numspotted;
-            
+
         }
         public override string ToString()
         {
@@ -50,7 +50,9 @@ namespace OOD_Project
 
     }
 
-    public class UserBird : JsonBird 
+
+
+    public class UserBird : JsonBird
     {
         //user created bird entries come with the ability to add image, it can't be null
         public string[] birdimng { get; set; }
@@ -64,7 +66,21 @@ namespace OOD_Project
 
         public UserBird()
         {
-            
+
+        }
+
+        public class ShowKeithBird : JsonBird //note this class is only there to show that radio buttons acutally work + will be renamed after the presentation
+        {
+
+            public ShowKeithBird()
+            {
+
+            }
+            public override string ToString()
+            {
+                return $"{comName}";
+            }
+
         }
     }
 }

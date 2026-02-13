@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
+using System.Linq;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using static OOD_Project.UserBird;
 
 namespace OOD_Project
 {
@@ -12,29 +15,30 @@ namespace OOD_Project
     /// </summary>
     public partial class Landing_Page : Page
     {
-        List<JsonBird> AllBirds = new List<JsonBird>();
+        List<JsonBird> AllBirdsJ = new List<JsonBird>();
+        List<ShowKeithBird> AllBirdsU = new List<ShowKeithBird>();
 
         public Landing_Page()
         {
             InitializeComponent();
+
+            //these 2 lines are solely here to show that radio btns are working
+            ShowKeithBird b1 = new ShowKeithBird() { comName = "Berd", sciName = "Stinky Stinky", howMany = 2 };
+            AllBirdsU.Add(b1);
         }
 
-        bool Allchecked;
-        bool Databasechecked;
-        bool UserChecked;
-     
         async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            string apiKey = "31ichicpcbi7";  
+            string apiKey = "31ichicpcbi7";
 
             EbirdClient client = new EbirdClient(apiKey);
 
             string json = await client.GetRecentObservations("IE"); // IE = Ireland
 
 
-            AllBirds = JsonSerializer.Deserialize<List<JsonBird>>(json);
+            AllBirdsJ = JsonSerializer.Deserialize<List<JsonBird>>(json);
 
-            lbshowbird.ItemsSource = AllBirds;
+            rdAll.IsChecked = true;
         }
         //Display certain properties
         private void lbshowbird_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -68,7 +72,26 @@ namespace OOD_Project
         private void btndelbird_Click(object sender, RoutedEventArgs e)
         {
             //delete an entry here
-           
+
+        }
+
+        private void rdAll_Checked(object sender, RoutedEventArgs e, IEnumerable<JsonBird> allBirdsJ)
+        {
+            var concatBird = allBirdsJ.Concat(AllBirdsU);
+            List<JsonBird> birds  = concatBird.ToList();
+            birds.Sort();
+            lbshowbird.ItemsSource = birds;
+        }
+
+        private void rdAPI_Checked(object sender, RoutedEventArgs e)
+        {
+            lbshowbird.ItemsSource = AllBirdsJ;
+        }
+
+        private void rdUserMade_Checked(object sender, RoutedEventArgs e)
+        {
+            lbshowbird.ItemsSource = AllBirdsU;
+
         }
     }
 

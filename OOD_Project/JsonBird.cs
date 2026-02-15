@@ -9,6 +9,7 @@ using System.Drawing;
 namespace OOD_Project
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+
     public class JsonBird : IComparable
     {
         public string speciesCode { get; set; }

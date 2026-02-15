@@ -74,7 +74,14 @@ namespace OOD_Project
 
         private void btndelbird_Click(object sender, RoutedEventArgs e)
         {
+
             //delete an entry here
+
+            //'Operation is not valid while ItemsSource is in use. Access and modify elements with ItemsControl.ItemsSource instead.' alright that's something I need to ask about
+
+            lbshowbird.Items.Remove(lbshowbird.SelectedItem); //technically correct but it throws an exception I don't know how to fix.
+
+
 
         }
 

@@ -31,7 +31,7 @@ namespace OOD_Project
             // Retrieved 2026-02-11, License - CC BY-SA 4.0
 
             Create_Pg.Navigate(new Page());
-            this.NavigationService.Navigate(new Uri("LoginScreen.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("Landing_Page.xaml", UriKind.Relative));
         }
     }
 }

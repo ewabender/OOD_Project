@@ -28,10 +28,5 @@ namespace OOD_Project
 
             return await response.Content.ReadAsStringAsync();
         }
-
-        //how do I create objects from JSON + isolate specific thing and shove it to the bits of the part of the object
-        //ask keith
-
-
     }
 }

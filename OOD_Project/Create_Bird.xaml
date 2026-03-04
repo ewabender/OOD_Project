@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOD_Project"
         mc:Ignorable="d"
-        Title="Create_Bird" Height="450" Width="800">
+        Title="Create_Bird" Height="450" Width="800" Background="#66BB6A">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="155*"/>
@@ -29,9 +29,6 @@
         <Button Name="btnback" Content="Go Back" HorizontalAlignment="Left" Margin="31,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="24" Grid.Column="1" Click="btnback_Click"/>
         <Image Margin="157,2,157,44" Source="/berd.png" Stretch="Fill" Grid.Column="2"/>
         <Frame Name="Create_Pg" NavigationUIVisibility="Hidden" />
-        <Grid.Background>
-            <ImageBrush ImageSource="/tienko-dima-uYoVf9I6ANI-unsplash.jpg"></ImageBrush>
-        </Grid.Background>
 
     </Grid>
 </Page>

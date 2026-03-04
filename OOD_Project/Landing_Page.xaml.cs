@@ -85,21 +85,21 @@ namespace OOD_Project
 
         private void rdAll_Checked(object sender, RoutedEventArgs e)
         {
-            var concatBird = AllBirdsU.Concat(AllBirdsJ);
-            List<Bird> birds = concatBird.ToList();
-            birds.Sort();
-            lbshowbird.ItemsSource = birds;
+            //var concatBird = AllBirdsU.Concat(AllBirdsJ);
+            //List<Bird> birds = concatBird.ToList();
+            //birds.Sort();
+            lbshowbird.ItemsSource = AllBirds;
         }
 
         private void rdAPI_Checked(object sender, RoutedEventArgs e)
         {
-            AllBirdsJ.Sort();
+            AllBirds.Sort();
             lbshowbird.ItemsSource = AllBirds;
         }
 
         private void rdUserMade_Checked(object sender, RoutedEventArgs e)
         {
-            AllBirdsU.Sort();
+            AllBirds.Sort();
             lbshowbird.ItemsSource = AllBirds;
 
         }

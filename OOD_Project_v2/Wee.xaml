@@ -7,8 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Wee">
+    
 
     <Grid>
+        <Border CornerRadius="10" Background="#E8F5E9"></Border>
         <Button Content="Page 1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="348" Click="Button_Click"/>
         <RadioButton Name="rdbchicken" Content="Chicken Jockey" HorizontalAlignment="Left" Margin="103,75,0,0" VerticalAlignment="Top" Checked="rdbchicken_Checked"/>
         <RadioButton Name="rdbrex" Content="T rex" HorizontalAlignment="Left" Margin="244,75,0,0" VerticalAlignment="Top" Checked="rdbrex_Checked"/>
@@ -17,6 +19,5 @@
         <RadioButton Name="rbtRee" Content="Ree" HorizontalAlignment="Left" Margin="348,75,0,0" VerticalAlignment="Top" Checked="rbtRee_Checked"/>
 
     </Grid>
-
-   
+    
 </Page>

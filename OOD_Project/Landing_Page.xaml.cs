@@ -7,7 +7,6 @@ using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using static OOD_Project.UserBird;
 
 namespace OOD_Project
 {
@@ -16,19 +15,20 @@ namespace OOD_Project
     /// </summary>
     public partial class Landing_Page : Page
     {
-        List<JsonBird> AllBirdsJ = new List<JsonBird>();
-        List<ShowKeithBird> AllBirdsU = new List<ShowKeithBird>();
+        List<Bird> AllBirdsJ = new List<Bird>();
+        List<Bird> AllBirdsU = new List<Bird>();
+        List<Bird> AllBirds = new List<Bird>();
 
         public Landing_Page()
         {
             InitializeComponent();
 
-            //these 2 lines are solely here to show that radio btns are working
-            ShowKeithBird b1 = new ShowKeithBird() { comName = "Berd", sciName = "Stinky Stinky", howMany = 42 };
-            AllBirdsU.Add(b1);
+            
+            Bird b1 = new Bird() { comName = "Berd", sciName = "Stinky Stinky", howMany = 42 };
+            AllBirds.Add(b1);
 
-            ShowKeithBird b2 = new ShowKeithBird() { comName = "Elsa", sciName = "Frozen Frozen", howMany = 62 };
-            AllBirdsU.Add(b2);
+            Bird b2 = new Bird() { comName = "Elsa", sciName = "Frozen Frozen", howMany = 62 };
+            AllBirds.Add(b2);
         }
 
         async void Page_Loaded(object sender, RoutedEventArgs e)
@@ -40,7 +40,7 @@ namespace OOD_Project
             string json = await client.GetRecentObservations("IE"); // IE = Ireland
 
 
-            AllBirdsJ = JsonSerializer.Deserialize<List<JsonBird>>(json);
+            AllBirds = JsonSerializer.Deserialize<List<Bird>>(json);
 
             rdAll.IsChecked = true;
         }
@@ -49,7 +49,7 @@ namespace OOD_Project
         {
 
             //selects the birds object 
-            JsonBird Bird = lbshowbird.SelectedItem as JsonBird;
+            Bird Bird = lbshowbird.SelectedItem as Bird;
 
             //if the thing ain't null 
             if (Bird != null)
@@ -75,29 +75,18 @@ namespace OOD_Project
 
         private void btndelbird_Click(object sender, RoutedEventArgs e)
         {
-            JsonBird jsonBird = lbshowbird.SelectedItem as JsonBird;
+            Bird jsonBird = lbshowbird.SelectedItem as Bird;
 
             if ( jsonBird != null)
             {
-                //birds.Remove(jsonBird);
+                AllBirds.Remove(jsonBird);
             }
-            //delete an entry here
-
-            //define the bird 
-
-
-            //'Operation is not valid while ItemsSource is in use. Access and modify elements with ItemsControl.ItemsSource instead.' alright that's something I need to ask about
-
-            lbshowbird.Items.Remove(lbshowbird.SelectedItem); //technically correct but it throws an exception I don't know how to fix.
-
-
-
         }
 
         private void rdAll_Checked(object sender, RoutedEventArgs e)
         {
             var concatBird = AllBirdsU.Concat(AllBirdsJ);
-            List<JsonBird> birds = concatBird.ToList();
+            List<Bird> birds = concatBird.ToList();
             birds.Sort();
             lbshowbird.ItemsSource = birds;
         }
@@ -105,13 +94,13 @@ namespace OOD_Project
         private void rdAPI_Checked(object sender, RoutedEventArgs e)
         {
             AllBirdsJ.Sort();
-            lbshowbird.ItemsSource = AllBirdsJ;
+            lbshowbird.ItemsSource = AllBirds;
         }
 
         private void rdUserMade_Checked(object sender, RoutedEventArgs e)
         {
             AllBirdsU.Sort();
-            lbshowbird.ItemsSource = AllBirdsU;
+            lbshowbird.ItemsSource = AllBirds;
 
         }
     }

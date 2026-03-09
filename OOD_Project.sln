@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOD_Project", "OOD_Project\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOD_Project_v2", "OOD_Project_v2\OOD_Project_v2.csproj", "{E6B77718-00F4-4834-AB43-A1BFF7833591}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdDatabase", "BirdDatabase\BirdDatabase.csproj", "{326305A9-4E53-4FCB-90FB-66B562EC05A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E6B77718-00F4-4834-AB43-A1BFF7833591}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6B77718-00F4-4834-AB43-A1BFF7833591}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6B77718-00F4-4834-AB43-A1BFF7833591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{326305A9-4E53-4FCB-90FB-66B562EC05A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{326305A9-4E53-4FCB-90FB-66B562EC05A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{326305A9-4E53-4FCB-90FB-66B562EC05A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{326305A9-4E53-4FCB-90FB-66B562EC05A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

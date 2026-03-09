@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Security.RightsManagement;
+using System.Data.Entity;
 
 namespace OOD_Project
 {
@@ -62,6 +63,11 @@ namespace OOD_Project
         }
     }
 
+    public class BirdData : DbContext
+    {
+        public BirdData() :base("Bird Data") { }
+        public DbSet<Bird> Birds { get; set; }
+    }
 
 
 }

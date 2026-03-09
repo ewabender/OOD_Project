@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,21 @@ namespace OOD_Project
     /// </summary>
     public partial class Create_Bird : Page
     {
+        Bird b1 = new Bird();
         public Create_Bird()
         {
+
             InitializeComponent();
+           
+
+
+            string birdname;
+            string sciencename;
+            string where;
+            string when;
+            string howmany;
+
+
         }
 
         private void btnback_Click(object sender, RoutedEventArgs e)
@@ -33,5 +46,46 @@ namespace OOD_Project
             Create_Pg.Navigate(new Page());
             this.NavigationService.Navigate(new Uri("Landing_Page.xaml", UriKind.Relative));
         }
+
+        private void btnimg_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Filter = "Image files *.bmp; *.png; *.jpg;";
+            openDialog.FilterIndex = 1;
+            if (openDialog.ShowDialog() == true)
+            {
+                //save the file
+              b1.birdImage= new BitmapImage(new Uri(openDialog.FileName));
+            }
+
+
+
+        }
+
+        private void tbxCommonname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbxScientificName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbxwhere_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbxwhen_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbxhowmany_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
+
 }

@@ -152,13 +152,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="boris-smokrovic-DPXytK8Z59Y-unsplash.jpg" />
+    <Resource Include="Images\boris-smokrovic-DPXytK8Z59Y-unsplash.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="berd.png" />
+    <Resource Include="Images\berd.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="tienko-dima-uYoVf9I6ANI-unsplash.jpg" />
+    <Resource Include="Images\tienko-dima-uYoVf9I6ANI-unsplash.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" />

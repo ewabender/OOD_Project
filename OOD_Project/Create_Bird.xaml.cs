@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+
 
 namespace OOD_Project
 {
@@ -57,19 +59,23 @@ namespace OOD_Project
             {
                 //save the file
                 b1.birdImage = openDialog.FileName;
-                //shove into the folder
+                //shave the img of the path
+                string img = System.IO.Path.GetFileName(b1.birdImage);
 
+                //shove into the folder
+                string destinationfold = @"C:\Users\EwaBender-STUDENT\Source\Repos\OOD_Project\OOD_Project\Images\";
                 //get path to Images folder
                 string appfolder = AppDomain.CurrentDomain.BaseDirectory;
                 //shaving off the \\bin\\Debug\\
                 int found = 0;
-                found = appfolder.IndexOf(@"\\bin\\Debug\\");
+                found = appfolder.IndexOf(@"bin\Debug\");
                 string path = appfolder.Substring(0, found);
                 //combine path w/ img name
-             var imgpath = new System.Text.StringBuilder();
-                imgpath.Append(path);
-               // imgpath.Append(bir);
+                string imgpath = path + img;
+
+                destinationfold += img;
                 //move the file 
+                File.Copy(b1.birdImage, destinationfold);
             }
 
 
@@ -97,6 +103,11 @@ namespace OOD_Project
         }
 
         private void tbxhowmany_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btncreatebird_Click(object sender, RoutedEventArgs e)
         {
 
         }

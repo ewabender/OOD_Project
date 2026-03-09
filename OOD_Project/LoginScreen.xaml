@@ -22,7 +22,7 @@
         <Button Name="btnlogin" Grid.Column="1" Content="Login" HorizontalAlignment="Left" Margin="49,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="307" Height="24" Click="btnlogin_Click" Cursor="Hand" />
 
         <PasswordBox x:Name="tbxpasswd" Grid.Column="1" HorizontalAlignment="Left" Margin="53,140,0,0" Grid.Row="1" VerticalAlignment="Top" Width="303" Height="24"/>
-        <TextBox x:Name="tbxuserinput" Grid.Column="1" HorizontalAlignment="Left" Margin="51,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Height="24" Grid.Row="1"/>
+        <TextBox x:Name="tbxuserinput" Grid.Column="1" HorizontalAlignment="Left" Margin="51,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Height="24" Grid.Row="1" TextChanged="tbxuserinput_TextChanged"/>
         <Image Margin="140,0,107,4" Source="/Images/berd.png" Stretch="Fill" Grid.Column="1" />
     </Grid>
 </Page>

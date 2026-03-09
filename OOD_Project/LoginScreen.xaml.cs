@@ -29,5 +29,10 @@ namespace OOD_Project
         {
             
         }
+
+        private void tbxuserinput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

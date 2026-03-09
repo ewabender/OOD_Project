@@ -25,7 +25,7 @@ namespace OOD_Project
         {
 
             InitializeComponent();
-           
+
 
 
             string birdname;
@@ -49,13 +49,27 @@ namespace OOD_Project
 
         private void btnimg_Click(object sender, RoutedEventArgs e)
         {
+
             OpenFileDialog openDialog = new OpenFileDialog();
-            openDialog.Filter = "Image files *.bmp; *.png; *.jpg;";
+            openDialog.Filter = "Image files (*.bmp; *.png; *.jpg) |*.bmp; *.png; *.jpg";
             openDialog.FilterIndex = 1;
             if (openDialog.ShowDialog() == true)
             {
                 //save the file
-              b1.birdImage= new BitmapImage(new Uri(openDialog.FileName));
+                b1.birdImage = openDialog.FileName;
+                //shove into the folder
+
+                //get path to Images folder
+                string appfolder = AppDomain.CurrentDomain.BaseDirectory;
+                //shaving off the \\bin\\Debug\\
+                int found = 0;
+                found = appfolder.IndexOf(@"\\bin\\Debug\\");
+                string path = appfolder.Substring(0, found);
+                //combine path w/ img name
+             var imgpath = new System.Text.StringBuilder();
+                imgpath.Append(path);
+               // imgpath.Append(bir);
+                //move the file 
             }
 
 

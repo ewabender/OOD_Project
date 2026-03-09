@@ -25,7 +25,7 @@
         <Button Name="btndelbird" Grid.Column="2" Content="Delete an entry" HorizontalAlignment="Left" Margin="149,194,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Click="btndelbird_Click" Width="85"/>
         <Frame Name="Landing_Pg" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" />
         <Button Name="btncreatebird" Grid.Column="2" Content="Create a Bird!" HorizontalAlignment="Left" Margin="315,194,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Click="btncreatebird_Click" Width="75"/>
-        <Image Margin="10,10,10,10" Source="/boris-smokrovic-DPXytK8Z59Y-unsplash.jpg" Stretch="Fill" Grid.ColumnSpan="2"/>
+        <Image Margin="10,10,10,10" Source="/Images/boris-smokrovic-DPXytK8Z59Y-unsplash.jpg" Stretch="Fill" Grid.ColumnSpan="2"/>
 
 
     </Grid>

@@ -15,8 +15,7 @@ namespace OOD_Project
     /// </summary>
     public partial class Landing_Page : Page
     {
-        List<Bird> AllBirdsJ = new List<Bird>();
-        List<Bird> AllBirdsU = new List<Bird>();
+    
         List<Bird> AllBirds = new List<Bird>();
 
         public Landing_Page()
@@ -24,11 +23,7 @@ namespace OOD_Project
             InitializeComponent();
 
             
-            Bird b1 = new Bird() { comName = "Berd", sciName = "Stinky Stinky", howMany = 42 };
-            AllBirds.Add(b1);
-
-            Bird b2 = new Bird() { comName = "Elsa", sciName = "Frozen Frozen", howMany = 62 };
-            AllBirds.Add(b2);
+ 
         }
 
         async void Page_Loaded(object sender, RoutedEventArgs e)
@@ -41,6 +36,13 @@ namespace OOD_Project
 
 
             AllBirds = JsonSerializer.Deserialize<List<Bird>>(json);
+
+
+            Bird b1 = new Bird() { comName = "Berd", sciName = "Stinky Stinky", howMany = 42, userBird = true };
+            AllBirds.Add(b1);
+
+            Bird b2 = new Bird() { comName = "Elsa", sciName = "Frozen Frozen", howMany = 62, userBird = true };
+            AllBirds.Add(b2);
 
             rdAll.IsChecked = true;
         }
@@ -88,19 +90,36 @@ namespace OOD_Project
             //var concatBird = AllBirdsU.Concat(AllBirdsJ);
             //List<Bird> birds = concatBird.ToList();
             //birds.Sort();
+            AllBirds.Sort();
             lbshowbird.ItemsSource = AllBirds;
         }
 
         private void rdAPI_Checked(object sender, RoutedEventArgs e)
         {
             AllBirds.Sort();
-            lbshowbird.ItemsSource = AllBirds;
+            var query = from b in AllBirds
+                        where b.userBird == false
+                        select b;
+            var resuls = query.ToList();
+
+            lbshowbird.ItemsSource = query.ToList();
+            //select birds
+            //I want only the entries where the user bird is false 
+            // lbshowbird.ItemsSource = AllBirds;
         }
 
         private void rdUserMade_Checked(object sender, RoutedEventArgs e)
         {
             AllBirds.Sort();
-            lbshowbird.ItemsSource = AllBirds;
+            var query = from b in AllBirds
+                        where b.userBird == true
+                        select b;
+            var resuls  = query.ToList();
+
+            lbshowbird.ItemsSource = query.ToList();
+            //select birds
+            //I want only the entries where the user bird is true 
+           // lbshowbird.ItemsSource = AllBirds;
 
         }
     }

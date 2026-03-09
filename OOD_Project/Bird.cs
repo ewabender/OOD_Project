@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Security.RightsManagement;
 
 namespace OOD_Project
 {
@@ -25,7 +26,7 @@ namespace OOD_Project
         public bool obsReviewed { get; set; }
         public bool locationPrivate { get; set; }
         public string subId { get; set; }
-
+        public bool userBird { get; set; }
 
         public string birdImage { get; set; }
 
@@ -46,6 +47,7 @@ namespace OOD_Project
             locName = location;
             obsDt = when;
             howMany = numspotted;
+            userBird = false;
 
         }
         public override string ToString()

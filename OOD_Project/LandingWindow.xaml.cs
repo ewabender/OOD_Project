@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -20,14 +21,14 @@ namespace OOD_Project
     /// </summary>
     public partial class LandingWindow : Window
     {
-        List<Bird> AllBirds = new List<Bird>();
+        public List<Bird> AllBirds = new List<Bird>();
 
         public LandingWindow()
         {
             InitializeComponent();
         }
 
-        async void Page_Loaded(object sender, RoutedEventArgs e)
+        async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             string apiKey = "31ichicpcbi7";
 
@@ -68,16 +69,18 @@ namespace OOD_Project
         //implement a functionality when you can move between pages
         private void btncreatebird_Click(object sender, RoutedEventArgs e)
         {
-            //Source - https://stackoverflow.com/a/20807014
-            // Posted by Jake, modified by community. See post 'Timeline' for change history
-            // Retrieved 2026-02-11, License - CC BY-SA 4.0
 
-            //Landing_Pg.Navigate(new Page());
-            //this.NavigationService.Navigate(new Uri("Create_Bird.xaml", UriKind.Relative));
+            CreateBird create = new CreateBird();
 
+            create.Owner = this;
+            create.ShowDialog();
 
-            //Navigate to new window - 
+            //refresh display
 
+            RefreshBird();
+
+            //save it to the list of birds or the database
+            //go back to the previous window
         }
 
         private void btndelbird_Click(object sender, RoutedEventArgs e)
@@ -92,9 +95,7 @@ namespace OOD_Project
 
         private void rdAll_Checked(object sender, RoutedEventArgs e)
         {
-            //var concatBird = AllBirdsU.Concat(AllBirdsJ);
-            //List<Bird> birds = concatBird.ToList();
-            //birds.Sort();
+            ;
             AllBirds.Sort();
             lbshowbird.ItemsSource = AllBirds;
         }
@@ -110,7 +111,6 @@ namespace OOD_Project
             lbshowbird.ItemsSource = query.ToList();
             //select birds
             //I want only the entries where the user bird is false 
-            // lbshowbird.ItemsSource = AllBirds;
         }
 
         private void rdUserMade_Checked(object sender, RoutedEventArgs e)
@@ -127,5 +127,26 @@ namespace OOD_Project
             // lbshowbird.ItemsSource = AllBirds;
 
         }
+
+        private void RefreshBird() 
+        {
+            lbshowbird.ItemsSource = null;
+            lbshowbird.ItemsSource = AllBirds;
+            lbshowbird.SelectedIndex = AllBirds.Count;
+            AllBirds.Sort();
+
+        }
+
+        private void ShowBird(string filename) 
+        {
+            var bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(filename, UriKind.Absolute);
+            bitmap.CacheOption = BitmapCacheOption.OnLoad; // load fully so file handle is released
+            bitmap.EndInit();
+            showbird.Source = bitmap; // replace "UploadedImage" with your Image control's x:Name
+        }
+
+
     }
 }

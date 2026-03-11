@@ -23,24 +23,26 @@ namespace OOD_Project
 
     public partial class CreateBird : Window
     {
+        Bird b1 = new Bird();
+
+        public string filename;
+
         public CreateBird()
         {
             InitializeComponent();
         }
 
-        Bird b1 = new Bird();
+ 
 
         private void btnback_Click(object sender, RoutedEventArgs e)
         {
-            //Source - https://stackoverflow.com/a/20807014
-            // Posted by Jake, modified by community. See post 'Timeline' for change history
-            // Retrieved 2026-02-11, License - CC BY-SA 4.0
+           
 
             Create_Pg.Navigate(new Page());
             //this.NavigationService.Navigate(new Uri("Landing_Page.xaml", UriKind.Relative));
         }
 
-        private void btnimg_Click(object sender, RoutedEventArgs e)
+        public void btnimg_Click(object sender, RoutedEventArgs e)
         {
 
             //all done by keith thank you
@@ -64,6 +66,7 @@ namespace OOD_Project
 
                 string destinationFile = System.IO.Path.Combine(imagesFolder, fileName);
 
+                filename=destinationFile;
                 try
                 {
                     File.Copy(sourceFile, destinationFile, overwrite: true);
@@ -85,21 +88,25 @@ namespace OOD_Project
 
         public void btncreatebird_Click(object sender, RoutedEventArgs e)
         {
+            b1.birdImage = filename;
             b1.comName = tbxCommonname.Text;
-            b1.sciName = tbxCommonname.Text;
-            //b1.where = tbxCommonname.Text;
-            //b1.when = tbxCommonname.Text;
-            //b1.howmany = tbxCommonname.Text;
-
+            b1.sciName = tbxScientificName.Text;
+            b1.locName = tbxwhere.Text;
+            b1.obsDt = tbxwhen.Text;
+            b1.howMany = Convert.ToInt32(tbxhowmany.Text);
+            b1.userBird = true;
 
             //once all data gathered
 
+            LandingWindow landingWindow = this.Owner as LandingWindow;
+            landingWindow.AllBirds.Add(b1);
             //save it to the list of birds or the database
-
             //go back to the previous window
 
+            this.Close();
 
         }
+
         public void DisplayImage(string filePath)
         {
             var bitmap = new BitmapImage();
@@ -108,7 +115,7 @@ namespace OOD_Project
             bitmap.CacheOption = BitmapCacheOption.OnLoad; // load fully so file handle is released
             bitmap.EndInit();
 
-            //showbird.Source = bitmap; // replace "UploadedImage" with your Image control's x:Name
         }
+
     }
 }

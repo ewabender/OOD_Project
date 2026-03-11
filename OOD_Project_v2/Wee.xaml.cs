@@ -73,5 +73,10 @@ namespace OOD_Project_v2
         {
             lbxcarrot.ItemsSource = Whowhat;
         }
+
+        private void _Nav1_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

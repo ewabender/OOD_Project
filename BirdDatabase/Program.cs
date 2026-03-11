@@ -13,11 +13,11 @@ namespace BirdDatabase
         {
             BirdData db = new BirdData();
 
-            using (db) 
+            //using (db) 
             { 
             //do 1 manually 
 
-            // then  ask Keitk :)
+            // then  ask Keith :)
 
 
 

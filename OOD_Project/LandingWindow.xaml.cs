@@ -1,29 +1,30 @@
-﻿using Microsoft.SqlServer.Server;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.SymbolStore;
 using System.Linq;
+using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace OOD_Project
 {
     /// <summary>
-    /// Interaction logic for Landing_Page.xaml
+    /// Interaction logic for LandingWindow.xaml
     /// </summary>
-    public partial class Landing_Page : Page
+    public partial class LandingWindow : Window
     {
-    
         List<Bird> AllBirds = new List<Bird>();
 
-        public Landing_Page()
+        public LandingWindow()
         {
             InitializeComponent();
-
-            
- 
         }
 
         async void Page_Loaded(object sender, RoutedEventArgs e)
@@ -71,15 +72,19 @@ namespace OOD_Project
             // Posted by Jake, modified by community. See post 'Timeline' for change history
             // Retrieved 2026-02-11, License - CC BY-SA 4.0
 
-            Landing_Pg.Navigate(new Page());
-            this.NavigationService.Navigate(new Uri("Create_Bird.xaml", UriKind.Relative));
+            //Landing_Pg.Navigate(new Page());
+            //this.NavigationService.Navigate(new Uri("Create_Bird.xaml", UriKind.Relative));
+
+
+            //Navigate to new window - 
+
         }
 
         private void btndelbird_Click(object sender, RoutedEventArgs e)
         {
             Bird jsonBird = lbshowbird.SelectedItem as Bird;
 
-            if ( jsonBird != null)
+            if (jsonBird != null)
             {
                 AllBirds.Remove(jsonBird);
             }
@@ -114,15 +119,13 @@ namespace OOD_Project
             var query = from b in AllBirds
                         where b.userBird == true
                         select b;
-            var resuls  = query.ToList();
+            var resuls = query.ToList();
 
             lbshowbird.ItemsSource = query.ToList();
             //select birds
             //I want only the entries where the user bird is true 
-           // lbshowbird.ItemsSource = AllBirds;
+            // lbshowbird.ItemsSource = AllBirds;
 
         }
     }
-
 }
-

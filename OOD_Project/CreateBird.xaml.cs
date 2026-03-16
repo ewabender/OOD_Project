@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,7 +20,7 @@ namespace OOD_Project
     /// <summary>
     /// Interaction logic for CreateBird2.xaml
     /// </summary>
-  
+
 
     public partial class CreateBird : Window
     {
@@ -32,11 +33,11 @@ namespace OOD_Project
             InitializeComponent();
         }
 
- 
+
 
         private void btnback_Click(object sender, RoutedEventArgs e)
         {
-           
+
 
             Create_Pg.Navigate(new Page());
             //this.NavigationService.Navigate(new Uri("Landing_Page.xaml", UriKind.Relative));
@@ -66,7 +67,7 @@ namespace OOD_Project
 
                 string destinationFile = System.IO.Path.Combine(imagesFolder, fileName);
 
-                filename=destinationFile;
+                filename = destinationFile;
                 try
                 {
                     File.Copy(sourceFile, destinationFile, overwrite: true);
@@ -84,18 +85,34 @@ namespace OOD_Project
 
         }
 
-      
+
 
         public void btncreatebird_Click(object sender, RoutedEventArgs e)
         {
-            b1.birdImage = filename;
-            b1.comName = tbxCommonname.Text;
-            b1.sciName = tbxScientificName.Text;
-            b1.locName = tbxwhere.Text;
-            b1.obsDt = tbxwhen.Text;
-            b1.howMany = Convert.ToInt32(tbxhowmany.Text);
-            b1.userBird = true;
+            try
+            {
+                if (b1.birdImage != null && b1.comName != null && b1.sciName != null && b1.locName != null && b1.obsDt != null && b1.howMany != null)
+                {
+                    b1.birdImage = filename;
+                    b1.comName = tbxCommonname.Text;
+                    b1.sciName = tbxScientificName.Text;
+                    b1.locName = tbxwhere.Text;
+                    b1.obsDt = tbxwhen.Text;
+                    b1.howMany = Convert.ToInt32(tbxhowmany.Text);
+                    //implement check here that sees if the thing can be an int.
+                    b1.userBird = true;
+                }
 
+            }
+
+
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"All fields must be filled: {ex.Message}", "Error",
+                         MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             //once all data gathered
 
             LandingWindow landingWindow = this.Owner as LandingWindow;

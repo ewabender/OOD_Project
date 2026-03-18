@@ -23,5 +23,13 @@ namespace OOD_Project
         {
             InitializeComponent();
         }
+
+        private void btnlogin_Click(object sender, RoutedEventArgs e)
+        {
+            //user is ewabender
+            //password is munchies
+        }
+       
+
     }
 }

@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock x:Name="tbxuser" Grid.Column="1" HorizontalAlignment="Left" Margin="53,13,0,0" TextWrapping="Wrap" Text="                Username" VerticalAlignment="Top" Width="303" FontFamily="Copperplate Gothic Bold" FontWeight="Bold" FontSize="23" Height="49" Grid.Row="1"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,96,0,0" Grid.Row="1" TextWrapping="Wrap" Text="                 Password" VerticalAlignment="Top" Width="303" FontFamily="Copperplate Gothic Bold" FontWeight="Bold" FontSize="23" Height="49"/>
-        <Button Name="btnlogin" Grid.Column="1" Content="Login" HorizontalAlignment="Left" Margin="49,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="307" Height="24" Click="btnlogin_Click" Cursor="Hand" />
+        <TextBlock x:Name="tbxuser" HorizontalAlignment="Left" Margin="219,188,0,0" TextWrapping="Wrap" Text="                Username" VerticalAlignment="Top" Width="303" FontFamily="Copperplate Gothic Bold" FontWeight="Bold" FontSize="23" Height="49"/>
+        <TextBlock HorizontalAlignment="Left" Margin="215,261,0,0" TextWrapping="Wrap" Text="                 Password" VerticalAlignment="Top" Width="303" FontFamily="Copperplate Gothic Bold" FontWeight="Bold" FontSize="23" Height="49"/>
+        <Button Name="btnlogin" Content="Login" HorizontalAlignment="Left" Margin="215,380,0,0" VerticalAlignment="Top" Width="307" Height="24" Click="btnlogin_Click" Cursor="Hand" />
 
-        <PasswordBox x:Name="tbxpasswd" Grid.Column="1" HorizontalAlignment="Left" Margin="53,140,0,0" Grid.Row="1" VerticalAlignment="Top" Width="303" Height="24"/>
-        <TextBox x:Name="tbxusermame" Grid.Column="1" HorizontalAlignment="Left" Margin="51,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Height="24" Grid.Row="1" TextChanged="tbxuserinput_TextChanged"/>
-        <Image Margin="140,0,107,4" Source="/Images/berd.png" Stretch="Fill" Grid.Column="1" />
+        <PasswordBox x:Name="tbxpasswd" HorizontalAlignment="Left" Margin="219,315,0,0" VerticalAlignment="Top" Width="303" Height="24"/>
+        <TextBox x:Name="tbxusermame" HorizontalAlignment="Left" Margin="217,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Height="24"/>
+        <Image Margin="272,0,288,248" Source="/Images/berd.png" Stretch="Fill" />
     </Grid>
 </Window>

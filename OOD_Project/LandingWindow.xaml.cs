@@ -122,7 +122,9 @@ namespace OOD_Project
                         select b;
             var resuls = query.ToList();
 
-            lbshowbird.ItemsSource = query.ToList();
+            var sorted = query.OrderBy(b => b.comName).ToList();
+
+            lbshowbird.ItemsSource = sorted;
             //select birds
             //I want only the entries where the user bird is true 
             // lbshowbird.ItemsSource = AllBirds;

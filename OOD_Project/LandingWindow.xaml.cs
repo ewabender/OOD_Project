@@ -95,7 +95,9 @@ namespace OOD_Project
 
         private void rdAll_Checked(object sender, RoutedEventArgs e)
         {
-            lbshowbird.ItemsSource = AllBirds;
+           
+            var sorted = AllBirds.OrderBy(b => b.comName).ToList();
+            lbshowbird.ItemsSource = sorted;
         }
 
         private void rdAPI_Checked(object sender, RoutedEventArgs e)
@@ -106,7 +108,8 @@ namespace OOD_Project
                         select b;
             var resuls = query.ToList();
 
-            lbshowbird.ItemsSource = query.ToList();
+            var sorted = query.OrderBy(b => b.comName).ToList();
+            lbshowbird.ItemsSource = sorted;
             //select birds
             //I want only the entries where the user bird is false 
         }
@@ -133,16 +136,6 @@ namespace OOD_Project
             lbshowbird.SelectedIndex = AllBirds.Count;
         
 
-        }
-
-        private void ShowBird(string filename) 
-        {
-            var bitmap = new BitmapImage();
-            bitmap.BeginInit();
-            bitmap.UriSource = new Uri(filename, UriKind.Absolute);
-            bitmap.CacheOption = BitmapCacheOption.OnLoad; // load fully so file handle is released
-            bitmap.EndInit();
-            showbird.Source = bitmap; // replace "UploadedImage" with your Image control's x:Name
         }
 
 

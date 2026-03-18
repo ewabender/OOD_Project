@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="LandingWindow" Height="550" Width="800" Loaded="Window_Loaded"
         WindowStartupLocation="CenterScreen">
+
     <Grid Margin="0,0,0,10">
         <Grid.RowDefinitions>
             <RowDefinition Height="257*"/>
@@ -26,6 +27,7 @@
         <Frame Name="Landing_Pg" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" />
         <Button Name="btncreatebird" Grid.Column="2" Content="Create a Bird!" HorizontalAlignment="Left" Margin="315,194,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Click="btncreatebird_Click" Width="75"/>
         <Image x:Name="showbird" Margin="10,10,10,10"  Stretch="Fill" Grid.ColumnSpan="2"/>
+        
 
     </Grid>
 </Window>

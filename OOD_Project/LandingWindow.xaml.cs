@@ -21,7 +21,7 @@ namespace OOD_Project
     /// </summary>
     public partial class LandingWindow : Window
     {
-        public List<Bird> AllBirds = new List<Bird>();
+        public ObservableCollection<Bird> AllBirds = new ObservableCollection<Bird>();
 
         public LandingWindow()
         {
@@ -37,7 +37,7 @@ namespace OOD_Project
             string json = await client.GetRecentObservations("IE"); // IE = Ireland
 
 
-            AllBirds = JsonSerializer.Deserialize<List<Bird>>(json);
+            AllBirds = JsonSerializer.Deserialize<ObservableCollection<Bird>>(json);
 
 
             Bird b1 = new Bird() { comName = "Berd", sciName = "Stinky Stinky", howMany = 42, userBird = true };
@@ -95,14 +95,12 @@ namespace OOD_Project
 
         private void rdAll_Checked(object sender, RoutedEventArgs e)
         {
-            ;
-            AllBirds.Sort();
             lbshowbird.ItemsSource = AllBirds;
         }
 
         private void rdAPI_Checked(object sender, RoutedEventArgs e)
         {
-            AllBirds.Sort();
+          
             var query = from b in AllBirds
                         where b.userBird == false
                         select b;
@@ -115,7 +113,7 @@ namespace OOD_Project
 
         private void rdUserMade_Checked(object sender, RoutedEventArgs e)
         {
-            AllBirds.Sort();
+           
             var query = from b in AllBirds
                         where b.userBird == true
                         select b;
@@ -133,7 +131,7 @@ namespace OOD_Project
             lbshowbird.ItemsSource = null;
             lbshowbird.ItemsSource = AllBirds;
             lbshowbird.SelectedIndex = AllBirds.Count;
-            AllBirds.Sort();
+        
 
         }
 

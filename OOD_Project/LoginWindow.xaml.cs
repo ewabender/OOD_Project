@@ -26,10 +26,18 @@ namespace OOD_Project
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
+
+            string userinput = tbxpasswd.Password;
             //user is ewabender
             //password is munchies
-        }
-       
+            //if user succesful
+            if (userinput.ToString() == "munchies") 
+            {
+                LandingWindow create = new LandingWindow();
+                create.Owner = this;
+                create.ShowDialog();
 
+            }
+        }
     }
 }

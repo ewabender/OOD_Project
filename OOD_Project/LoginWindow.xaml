@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOD_Project"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="LoginWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBlock x:Name="tbxuser" HorizontalAlignment="Left" Margin="219,188,0,0" TextWrapping="Wrap" Text="                Username" VerticalAlignment="Top" Width="303" FontFamily="Copperplate Gothic Bold" FontWeight="Bold" FontSize="23" Height="49"/>
         <TextBlock HorizontalAlignment="Left" Margin="215,261,0,0" TextWrapping="Wrap" Text="                 Password" VerticalAlignment="Top" Width="303" FontFamily="Copperplate Gothic Bold" FontWeight="Bold" FontSize="23" Height="49"/>
         <Button Name="btnlogin" Content="Login" HorizontalAlignment="Left" Margin="215,380,0,0" VerticalAlignment="Top" Width="307" Height="24" Click="btnlogin_Click" Cursor="Hand" />
 
         <PasswordBox x:Name="tbxpasswd" HorizontalAlignment="Left" Margin="219,315,0,0" VerticalAlignment="Top" Width="303" Height="24"/>
-        <TextBox x:Name="tbxusermame" HorizontalAlignment="Left" Margin="217,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Height="24"/>
+        <TextBox x:Name="tbxusermame" HorizontalAlignment="Left" Margin="217,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Height="49"  Text="      ewabender" FontSize="36"/>
         <Image Margin="272,0,288,248" Source="/Images/berd.png" Stretch="Fill" />
     </Grid>
 </Window>

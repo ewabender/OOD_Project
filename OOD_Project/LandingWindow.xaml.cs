@@ -71,17 +71,7 @@ namespace OOD_Project
                 {
                     imgshowbird.Source = new BitmapImage(new Uri(Bird.birdImage, UriKind.Absolute));
                 }
-
             }
-
-
-
-
-            //if (Bird.userBird == true) 
-            //{
-            // 
-
-            //}
 
         }
 

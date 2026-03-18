@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace OOD_Project
 {
     /// <summary>
-    /// Interaction logic for Stats.xaml
+    /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class Stats : Page
+    public partial class LoginWindow : Window
     {
-        public Stats()
+        public LoginWindow()
         {
             InitializeComponent();
         }

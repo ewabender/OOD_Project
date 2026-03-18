@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OOD_Project
+namespace UserLogin
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Page
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void btnlogin_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void tbxuserinput_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

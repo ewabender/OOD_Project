@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Security.RightsManagement;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace OOD_Project
 {
@@ -14,6 +15,7 @@ namespace OOD_Project
 
     public class Bird : IComparable
     {
+        [Key]
         public string speciesCode { get; set; }
         public string comName { get; set; }
         public string sciName { get; set; }

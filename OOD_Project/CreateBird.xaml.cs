@@ -27,12 +27,17 @@ namespace OOD_Project
         Bird b1 = new Bird();
 
         public string filename;
+        string insertnum;
+
+
+
 
         public CreateBird()
         {
             InitializeComponent();
-        }
 
+
+        }
 
 
         private void btnback_Click(object sender, RoutedEventArgs e)
@@ -89,6 +94,41 @@ namespace OOD_Project
         public void btncreatebird_Click(object sender, RoutedEventArgs e)
         {
 
+            if (string.IsNullOrEmpty(tbxCommonname.Text) || string.IsNullOrEmpty(tbxScientificName.Text) || string.IsNullOrEmpty(tbxwhere.Text) || string.IsNullOrEmpty(tbxwhen.Text))
+            {
+                throw new Exception("The field can't be empty");
+            }
+
+            if (string.IsNullOrEmpty(tbxhowmany.Text))
+            {
+                throw new Exception("The number field can't be empty");
+
+            }
+
+
+            else
+            {
+                insertnum = tbxhowmany.Text;
+                if (int.TryParse(insertnum, out int result))
+                {
+
+                    if (result <= 0)
+                    {
+                        throw new Exception("Enter a numeric value greater than 0");
+                    }
+
+                }
+                else
+                {
+                    throw new Exception("Enter a numeric value");
+                }
+
+
+            }
+
+
+
+
 
             b1.birdImage = filename;
             b1.comName = tbxCommonname.Text;
@@ -111,15 +151,7 @@ namespace OOD_Project
 
         }
 
-        //public void DisplayImage(string filePath)
-        //{
-        //    var bitmap = new BitmapImage();
-        //    bitmap.BeginInit();
-        //    bitmap.UriSource = new Uri(filePath, UriKind.Absolute);
-        //    bitmap.CacheOption = BitmapCacheOption.OnLoad; // load fully so file handle is released
-        //    bitmap.EndInit();
-
-        //}
+       
 
     }
 }

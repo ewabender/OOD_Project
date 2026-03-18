@@ -38,9 +38,8 @@ namespace OOD_Project
         private void btnback_Click(object sender, RoutedEventArgs e)
         {
 
+            this.Close();
 
-            Create_Pg.Navigate(new Page());
-            //this.NavigationService.Navigate(new Uri("Landing_Page.xaml", UriKind.Relative));
         }
 
         public void btnimg_Click(object sender, RoutedEventArgs e)
@@ -71,7 +70,7 @@ namespace OOD_Project
                 try
                 {
                     File.Copy(sourceFile, destinationFile, overwrite: true);
-                    DisplayImage(destinationFile);
+
                 }
                 catch (Exception ex)
                 {
@@ -89,30 +88,18 @@ namespace OOD_Project
 
         public void btncreatebird_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                if (b1.birdImage != null && b1.comName != null && b1.sciName != null && b1.locName != null && b1.obsDt != null && b1.howMany != null)
-                {
-                    b1.birdImage = filename;
-                    b1.comName = tbxCommonname.Text;
-                    b1.sciName = tbxScientificName.Text;
-                    b1.locName = tbxwhere.Text;
-                    b1.obsDt = tbxwhen.Text;
-                    b1.howMany = Convert.ToInt32(tbxhowmany.Text);
-                    //implement check here that sees if the thing can be an int.
-                    b1.userBird = true;
-                }
-
-            }
 
 
+            b1.birdImage = filename;
+            b1.comName = tbxCommonname.Text;
+            b1.sciName = tbxScientificName.Text;
+            b1.locName = tbxwhere.Text;
+            b1.obsDt = tbxwhen.Text;
+            b1.howMany = Convert.ToInt32(tbxhowmany.Text);
+            //implement check here that sees if the thing can be an int.
+            b1.userBird = true;
 
 
-            catch (Exception ex)
-            {
-                MessageBox.Show($"All fields must be filled: {ex.Message}", "Error",
-                         MessageBoxButton.OK, MessageBoxImage.Error);
-            }
             //once all data gathered
 
             LandingWindow landingWindow = this.Owner as LandingWindow;
@@ -124,15 +111,15 @@ namespace OOD_Project
 
         }
 
-        public void DisplayImage(string filePath)
-        {
-            var bitmap = new BitmapImage();
-            bitmap.BeginInit();
-            bitmap.UriSource = new Uri(filePath, UriKind.Absolute);
-            bitmap.CacheOption = BitmapCacheOption.OnLoad; // load fully so file handle is released
-            bitmap.EndInit();
+        //public void DisplayImage(string filePath)
+        //{
+        //    var bitmap = new BitmapImage();
+        //    bitmap.BeginInit();
+        //    bitmap.UriSource = new Uri(filePath, UriKind.Absolute);
+        //    bitmap.CacheOption = BitmapCacheOption.OnLoad; // load fully so file handle is released
+        //    bitmap.EndInit();
 
-        }
+        //}
 
     }
 }

@@ -28,7 +28,6 @@ namespace OOD_Project
         public bool locationPrivate { get; set; }
         public string subId { get; set; }
         public bool userBird { get; set; }
-
         public string birdImage { get; set; }
 
 
@@ -40,9 +39,9 @@ namespace OOD_Project
             // empty ctor 
         }
 
-        protected Bird(string cnamne, string sname, string location, string when, int numspotted)
+        protected Bird(string scode, string cnamne, string sname, string location, string when, int numspotted)
         {
-
+            speciesCode = scode;
             comName = cnamne;
             sciName = sname;
             locName = location;

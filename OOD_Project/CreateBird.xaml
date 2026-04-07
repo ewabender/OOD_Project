@@ -1,9 +1,10 @@
-﻿<Window x:Class="OOD_Project.CreateBird"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOD_Project"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="OOD_Project.CreateBird"
         mc:Ignorable="d"
         Title="CreateBird2" Height="550" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
@@ -19,16 +20,19 @@
             <ColumnDefinition Width="469*"/>
             <ColumnDefinition Width="166*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Name="tbxCommonname" Text="Common Name"  Grid.Column="2" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="1" Margin="0,64,0,0" />
-        <TextBox Name="tbxScientificName" Text="Scientific name" TextAlignment="Center" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="1" Margin="0,98,0,0" Grid.RowSpan="2"/>
-        <TextBox Name="tbxwhere" Grid.Column="2" Text="Where" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="2" Margin="0,24,0,0" />
-        <Button Name="btnimg" Grid.Column="2" Content="Upload Image" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="306" Click="btnimg_Click" Grid.Row="1"/>
-        <TextBox Name="tbxwhen" Grid.Column="2" Text="When" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="2" Margin="0,63,0,0" />
-        <TextBox Name="tbxhowmany" Text="How many" TextAlignment="Center" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="2" Margin="0,93,0,0" Grid.RowSpan="2" />
-        <Button Name="btncreatebird" Grid.Column="2" Content="Create!" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="176" Grid.Row="3" Click="btncreatebird_Click" Margin="0,66,0,0"/>
-        <Button Name="btnback" Content="Go Back" HorizontalAlignment="Left" Margin="31,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="24" Grid.Column="1" Click="btnback_Click"/>
+        <TextBox x:Name="tbxCommonname" Text="Common Name"  Grid.Column="2" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="1" Margin="0,64,0,0" />
+        <TextBox x:Name="tbxScientificName" Text="Scientific name" TextAlignment="Center" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="1" Margin="0,98,0,0" Grid.RowSpan="2"/>
+        <TextBox x:Name="tbxwhere" Grid.Column="2" Text="Where" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="2" Margin="0,24,0,0" />
+        <Button x:Name="btnimg" Grid.Column="2" Content="Upload Image" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="306" Click="btnimg_Click" Grid.Row="1"/>
+        <TextBox x:Name="tbxwhen" Grid.Column="2" Text="When" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="2" Margin="0,63,0,0" />
+        <TextBox x:Name="tbxhowmany" Text="How many" TextAlignment="Center" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="2" Margin="0,93,0,0" Grid.RowSpan="2" />
+        <Button x:Name="btncreatebird" Grid.Column="2" Content="Create!" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="176" Grid.Row="3" Click="btncreatebird_Click" Margin="0,66,0,0"/>
+        <Button x:Name="btnback" Content="Go Back" HorizontalAlignment="Left" Margin="31,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="24" Grid.Column="1" Click="btnback_Click" Grid.ColumnSpan="2" Width="93"/>
         <Image Margin="157,20,157,21" Source="/Images/berd.png" Stretch="Fill" Grid.Column="2"/>
-        <Frame Name="Create_Pg" NavigationUIVisibility="Hidden" />
+        <Frame x:Name="Create_Pg" NavigationUIVisibility="Hidden" />
+
+        <materialDesign:DialogHost Content="DialogHost"/>
+        <materialDesign:DrawerHost Content="DrawerHost"/>
 
     </Grid>
 </Window>

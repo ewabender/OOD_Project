@@ -27,7 +27,7 @@ namespace BirdDatabase
                 ObservableCollection<Bird> AllBirds = GetAPIData().Result;
 
 
-                //
+                //where all bird entries are shoved into the db
                 for (int i = 1; i < AllBirds.Count; i++)
                 {
                     db.Birds.Add(AllBirds[i]);

@@ -4,6 +4,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace BirdDatabase
 {
@@ -23,8 +24,8 @@ namespace BirdDatabase
                 db.Birds.Add(b1);
                 db.Birds.Add(b2);
 
+                ObservableCollection<Bird> AllBirds = GetAPIData().Result;
 
-                
 
                 //
                 for (int i = 1; i < AllBirds.Count; i++)

@@ -126,10 +126,6 @@ namespace OOD_Project
 
             }
 
-
-
-
-
             b1.birdImage = filename;
             b1.comName = tbxCommonname.Text;
             b1.sciName = tbxScientificName.Text;

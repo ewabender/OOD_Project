@@ -16,30 +16,41 @@ namespace OOD_Project
     {
         public ObservableCollection<Bird> AllBirds = new ObservableCollection<Bird>();
 
+        private BirdData db;
+
         public LandingWindow()
         {
             InitializeComponent();
         }
 
-        async void Window_Loaded(object sender, RoutedEventArgs e)
+        void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            string apiKey = "31ichicpcbi7";
+            //string apiKey = "31ichicpcbi7";
 
-            EbirdClient client = new EbirdClient(apiKey);
+            //EbirdClient client = new EbirdClient(apiKey);
 
-            string json = await client.GetRecentObservations("IE"); // IE = Ireland
-
-
-            AllBirds = JsonSerializer.Deserialize<ObservableCollection<Bird>>(json);
+            //string json = await client.GetRecentObservations("IE"); // IE = Ireland
 
 
-            Bird b1 = new Bird() { speciesCode = "yee yee", comName = "Berd", sciName = "Stinky Stinky", howMany = 42, userBird = true, birdImage = @"C:\Users\EwaBender-STUDENT\Source\Repos\OOD_Project\OOD_Project\Images\kittuh.png" };
-            AllBirds.Add(b1);
+            //AllBirds = JsonSerializer.Deserialize<ObservableCollection<Bird>>(json);
 
-            Bird b2 = new Bird() { speciesCode = "what what", comName = "Elsa", sciName = "Frozen Frozen", howMany = 62, userBird = true, birdImage = @"C:\\Users\\EwaBender-STUDENT\\Source\\Repos\\OOD_Project\\OOD_Project\\Images\\OIP.jpg" };
-            AllBirds.Add(b2);
 
-            rdAll.IsChecked = true;
+            //Bird b1 = new Bird() { speciesCode = "yee yee", comName = "Berd", sciName = "Stinky Stinky", howMany = 42, userBird = true, birdImage = @"C:\Users\EwaBender-STUDENT\Source\Repos\OOD_Project\OOD_Project\Images\kittuh.png" };
+            //AllBirds.Add(b1);
+
+            //Bird b2 = new Bird() { speciesCode = "what what", comName = "Elsa", sciName = "Frozen Frozen", howMany = 62, userBird = true, birdImage = @"C:\\Users\\EwaBender-STUDENT\\Source\\Repos\\OOD_Project\\OOD_Project\\Images\\OIP.jpg" };
+            //AllBirds.Add(b2);
+
+            db = new BirdData();
+
+            var query = from b in db.Birds
+                        select b;
+            
+            var sorted = query.OrderBy(b => b.comName).ToList();
+
+            lbshowbird.ItemsSource = sorted;
+
+            //rdAll.IsChecked = true;
 
             imgshowbird.Source = new BitmapImage(new Uri(@"C:\\Users\\EwaBender-STUDENT\\Source\\Repos\\OOD_Project\\OOD_Project\\Images\\berd.png", UriKind.Absolute));
         }
@@ -103,7 +114,7 @@ namespace OOD_Project
         private void rdAPI_Checked(object sender, RoutedEventArgs e)
         {
 
-            var query = from b in AllBirds
+            var query = from b in db.Birds
                         where b.userBird == false
                         select b;
             var resuls = query.ToList();
@@ -117,7 +128,7 @@ namespace OOD_Project
         private void rdUserMade_Checked(object sender, RoutedEventArgs e)
         {
 
-            var query = from b in AllBirds
+            var query = from b in db.Birds
                         where b.userBird == true
                         select b;
             var resuls = query.ToList();
@@ -134,15 +145,15 @@ namespace OOD_Project
         private void RefreshBird()
         {
             lbshowbird.ItemsSource = null;
-            lbshowbird.ItemsSource = AllBirds;
-            lbshowbird.SelectedIndex = AllBirds.Count;
+            lbshowbird.ItemsSource = db.Birds;
+            lbshowbird.SelectedIndex = db.Birds.Count();
             SortBirds();
 
         }
 
         private void SortBirds()
         {
-            var sorted = AllBirds.OrderBy(b => b.comName).ToList();
+            var sorted = db.Birds.OrderBy(b => b.comName).ToList();
             lbshowbird.ItemsSource = sorted;
         }
     }

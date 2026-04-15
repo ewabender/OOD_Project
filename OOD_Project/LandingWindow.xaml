@@ -44,6 +44,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
+        <Image Margin="0,166,10,-10" Grid.Row="1" Source="/prjct.png" Stretch="Fill" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

@@ -16,6 +16,7 @@ namespace OOD_Project
     public class Bird : IComparable
     {
         [Key]
+        public int BirdId { get; set; }
         public string speciesCode { get; set; }
         public string comName { get; set; }
         public string sciName { get; set; }

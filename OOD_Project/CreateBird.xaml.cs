@@ -28,6 +28,7 @@ namespace OOD_Project
 
         public string filename;
         string insertnum;
+        BirdData db = new BirdData();
 
 
 
@@ -93,7 +94,11 @@ namespace OOD_Project
 
         public void btncreatebird_Click(object sender, RoutedEventArgs e)
         {
+            //create new bird object
+            Bird newBird = new Bird();
 
+            //check that fields are all filled
+            #region validation
             if (string.IsNullOrEmpty(tbxCommonname.Text) || string.IsNullOrEmpty(tbxScientificName.Text) || string.IsNullOrEmpty(tbxwhere.Text) || string.IsNullOrEmpty(tbxwhen.Text))
             {
                 throw new Exception("The field can't be empty");
@@ -125,29 +130,31 @@ namespace OOD_Project
 
 
             }
+            #endregion validation
 
-            b1.birdImage = filename;
-            b1.comName = tbxCommonname.Text;
-            b1.sciName = tbxScientificName.Text;
-            b1.locName = tbxwhere.Text;
-            b1.obsDt = tbxwhen.Text;
-            b1.howMany = Convert.ToInt32(tbxhowmany.Text);
+            //add info entered to the newBird object
+            newBird.birdImage = filename;
+            newBird.comName = tbxCommonname.Text;
+            newBird.sciName = tbxScientificName.Text;
+            newBird.locName = tbxwhere.Text;
+            newBird.obsDt = tbxwhen.Text;
+            newBird.howMany = Convert.ToInt32(tbxhowmany.Text);
             //implement check here that sees if the thing can be an int.
-            b1.userBird = true;
+            newBird.userBird = true;
 
+            //add to database table
+            db.Birds.Add(newBird);
 
-            //once all data gathered
+            //save changes to database
+            db.SaveChanges();
 
-            LandingWindow landingWindow = this.Owner as LandingWindow;
-            landingWindow.AllBirds.Add(b1);
-            //save it to the list of birds or the database
             //go back to the previous window
+            LandingWindow landingWindow = this.Owner as LandingWindow;
 
             this.Close();
-
         }
 
-       
+
 
     }
 }

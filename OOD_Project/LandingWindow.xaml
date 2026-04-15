@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OOD_Project"
         mc:Ignorable="d"
         Title="LandingWindow" Height="550" Width="800" Loaded="Window_Loaded"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" >
 
     <Grid Margin="0,0,0,10">
         <Grid.RowDefinitions>
@@ -19,15 +19,24 @@
             <ColumnDefinition Width="100*"/>
         </Grid.ColumnDefinitions>
         <RadioButton Name="rdAPI" Grid.Column="2" Content="Database" HorizontalAlignment="Left" Margin="110,31,0,0" VerticalAlignment="Top" Checked="rdAPI_Checked" Height="15" Width="84"/>
-        <ListBox Name="lbshowbird" Grid.Column="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,51,10,0" SelectionChanged="lbshowbird_SelectionChanged"/>
-        <TextBlock Name="tbdescribebird" HorizontalAlignment="Center" Height="196" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Center" Width="380" Grid.ColumnSpan="2"/>
+        <ListBox Name="lbshowbird" Grid.Column="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,51,10,0" SelectionChanged="lbshowbird_SelectionChanged"></ListBox>
+
+        <TextBlock Name="tbdescribebird" HorizontalAlignment="Left" Height="196" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="380" Grid.ColumnSpan="2" Margin="12,56,0,0"/>
         <RadioButton Name="rdUserMade" Grid.Column="2" Content="UserCreated" HorizontalAlignment="Left" Margin="200,31,0,0" VerticalAlignment="Top" Checked="rdUserMade_Checked" Height="15" Width="115"/>
         <RadioButton Name="rdAll" Grid.Column="2" Content="All" HorizontalAlignment="Left" Margin="15,31,0,0" VerticalAlignment="Top" Checked="rdAll_Checked" Height="15" Width="65"/>
         <Button Name="btndelbird" Grid.Column="2" Content="Delete an entry" HorizontalAlignment="Left" Margin="84,194,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Click="btndelbird_Click" Width="136"/>
         <Frame Name="Landing_Pg" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" />
         <Button Name="btncreatebird" Grid.Column="2" Content="Create a Bird!" HorizontalAlignment="Left" Margin="271,194,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Click="btncreatebird_Click" Width="119"/>
-        <Image x:Name="imgshowbird" Margin="10,10,10,10"  Stretch="Fill" Grid.ColumnSpan="2"/>
-
+        <Image x:Name="imgshowbird" Margin="12,72,8,210"  Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="46" Margin="12,10,0,0" TextWrapping="Wrap" Text="An app for bird enthusiasts!" VerticalAlignment="Top" Width="378">
+            <TextBlock.Style>
+                <Style>
+                    <Setter Property="TextBlock.FontStyle" Value="Oblique"/>
+                    <Setter Property="TextBlock.FontFamily" Value="Georgia"/>
+                    <Setter Property="TextBlock.FontSize"  Value="30"/>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
 
     </Grid>
 </Window>

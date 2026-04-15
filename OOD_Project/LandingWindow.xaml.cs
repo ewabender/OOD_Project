@@ -50,7 +50,7 @@ namespace OOD_Project
 
             lbshowbird.ItemsSource = sorted;
 
-            //rdAll.IsChecked = true;
+            rdAll.IsChecked = true;
 
             imgshowbird.Source = new BitmapImage(new Uri(@"C:\\Users\\EwaBender-STUDENT\\Source\\Repos\\OOD_Project\\OOD_Project\\Images\\berd.png", UriKind.Absolute));
         }
@@ -70,7 +70,7 @@ namespace OOD_Project
 
                 imgshowbird.Source = new BitmapImage(new Uri(@"C:\\Users\\EwaBender-STUDENT\\Source\\Repos\\OOD_Project\\OOD_Project\\Images\\berd.png", UriKind.Absolute));
 
-                if (Bird.userBird == true)
+                if (Bird.userBird == true && ! String.IsNullOrEmpty(Bird.birdImage))
                 {
                     imgshowbird.Source = new BitmapImage(new Uri(Bird.birdImage, UriKind.Absolute));
                 }
@@ -97,11 +97,18 @@ namespace OOD_Project
 
         private void btndelbird_Click(object sender, RoutedEventArgs e)
         {
-            Bird jsonBird = lbshowbird.SelectedItem as Bird;
+            Bird selectedBird = lbshowbird.SelectedItem as Bird;
 
-            if (jsonBird != null)
+            if (selectedBird != null)
             {
-                AllBirds.Remove(jsonBird);
+                //remove bird from database
+                db.Birds.Remove(selectedBird);
+
+                //save changes
+                db.SaveChanges();
+
+                //refresh display
+                RefreshBird() ;
             }
         }
 
@@ -144,10 +151,30 @@ namespace OOD_Project
 
         private void RefreshBird()
         {
-            lbshowbird.ItemsSource = null;
-            lbshowbird.ItemsSource = db.Birds;
-            lbshowbird.SelectedIndex = db.Birds.Count();
-            SortBirds();
+            //figure out what you are currently view - all birds, user birds or json birds
+
+            var query = db.Birds.OrderBy(b => b.comName).ToList();
+
+            if (rdAll.IsChecked == true)
+            {
+
+                //display all birds
+                lbshowbird.ItemsSource = query;
+            }
+            else if (rdAPI.IsChecked == true)
+            {
+                //display api birds
+                lbshowbird.ItemsSource = query.Where(b => b.userBird == false).ToList();
+            }
+            else
+            {
+
+                //diplays user birds
+                lbshowbird.ItemsSource = query.Where(b => b.userBird == true).ToList();
+
+            }
+
+            lbshowbird.SelectedIndex = 0;
 
         }
 

@@ -31,8 +31,7 @@
         <Image Margin="157,20,157,21" Source="/Images/berd.png" Stretch="Fill" Grid.Column="2"/>
         <Frame x:Name="Create_Pg" NavigationUIVisibility="Hidden" />
 
-        <materialDesign:DialogHost Content="DialogHost"/>
-        <materialDesign:DrawerHost Content="DrawerHost"/>
+      
 
     </Grid>
 </Window>

@@ -20,12 +20,12 @@
             <ColumnDefinition Width="469*"/>
             <ColumnDefinition Width="166*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="tbxCommonname" Text="Common Name"  Grid.Column="2" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="1" Margin="0,64,0,0" />
-        <TextBox x:Name="tbxScientificName" Text="Scientific name" TextAlignment="Center" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="1" Margin="0,98,0,0" Grid.RowSpan="2"/>
-        <TextBox x:Name="tbxwhere" Grid.Column="2" Text="Where" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="2" Margin="0,24,0,0" />
+        <TextBox x:Name="tbxCommonname" Text="Common Name"  Grid.Column="2" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="1" Margin="0,64,0,0" GotFocus="tbxCommonname_GotFocus"/>
+        <TextBox x:Name="tbxScientificName" Text="Scientific name" TextAlignment="Center" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="1" Margin="0,98,0,0" Grid.RowSpan="2" GotFocus="tbxScientificName_GotFocus" />
+        <TextBox x:Name="tbxwhere" Grid.Column="2" Text="Where" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="2" Margin="0,24,0,0" GotFocus="tbxwhere_GotFocus" />
         <Button x:Name="btnimg" Grid.Column="2" Content="Upload Image" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="306" Click="btnimg_Click" Grid.Row="1"/>
-        <TextBox x:Name="tbxwhen" Grid.Column="2" Text="When" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="2" Margin="0,63,0,0" />
-        <TextBox x:Name="tbxhowmany" Text="How many" TextAlignment="Center" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="2" Margin="0,93,0,0" Grid.RowSpan="2" />
+        <TextBox x:Name="tbxwhen" Grid.Column="2" Text="When" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Height="25" Grid.Row="2" Margin="0,63,0,0" GotFocus="tbxwhen_GotFocus" />
+        <TextBox x:Name="tbxhowmany" Text="How many" TextAlignment="Center" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="24" Grid.Row="2" Margin="0,93,0,0" Grid.RowSpan="2" GotFocus="tbxhowmany_GotFocus"  />
         <Button x:Name="btncreatebird" Grid.Column="2" Content="Create!" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="176" Grid.Row="3" Click="btncreatebird_Click" Margin="0,66,0,0"/>
         <Button x:Name="btnback" Content="Go Back" HorizontalAlignment="Left" Margin="31,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="24" Grid.Column="1" Click="btnback_Click" Grid.ColumnSpan="2" Width="93"/>
         <Image Margin="157,20,157,21" Source="/Images/berd.png" Stretch="Fill" Grid.Column="2"/>

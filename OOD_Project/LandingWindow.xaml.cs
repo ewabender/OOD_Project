@@ -52,7 +52,7 @@ namespace OOD_Project
 
             rdAll.IsChecked = true;
 
-            imgshowbird.Source = new BitmapImage(new Uri(@"C:\\Users\\EwaBender-STUDENT\\Source\\Repos\\OOD_Project\\OOD_Project\\Images\\berd.png", UriKind.Absolute));
+            imgshowbird.Source = new BitmapImage(new Uri(@"C:\Users\Ewa\source\repos\Prjct\OOD_Project\Images\berd.png", UriKind.Absolute));
         }
         //Display certain properties
         private void lbshowbird_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -68,7 +68,7 @@ namespace OOD_Project
                 //this displays info about the bird
                 tbdescribebird.Text = string.Format($"Common Name: {Bird.comName} \nScientific Name: {Bird.sciName} \nLocation: {Bird.locName} \nWhen: {Bird.obsDt} \nHow many: {Bird.howMany}");
 
-                imgshowbird.Source = new BitmapImage(new Uri(@"C:\\Users\\EwaBender-STUDENT\\Source\\Repos\\OOD_Project\\OOD_Project\\Images\\berd.png", UriKind.Absolute));
+                imgshowbird.Source = new BitmapImage(new Uri(@"C:\Users\Ewa\source\repos\Prjct\OOD_Project\Images\berd.png", UriKind.Absolute));
 
                 if (Bird.userBird == true && ! String.IsNullOrEmpty(Bird.birdImage))
                 {

@@ -154,7 +154,44 @@ namespace OOD_Project
             this.Close();
         }
 
+        private void tbxCommonname_GotFocus(object sender, RoutedEventArgs e)
+        {
+            // Source - https://stackoverflow.com/a/6972726
+            // Posted by Donut
+            // Retrieved 2026-04-15, License - CC BY-SA 3.0
+        
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= tbxCommonname_GotFocus;
+        }
 
+        private void tbxScientificName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= tbxScientificName_GotFocus;
+        }
 
+        private void tbxwhere_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= tbxwhere_GotFocus;
+        }
+
+        private void tbxwhen_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= tbxwhen_GotFocus;
+        }
+
+        private void tbxhowmany_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= tbxwhen_GotFocus;
+        }
     }
 }
+

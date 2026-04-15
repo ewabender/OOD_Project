@@ -21,7 +21,14 @@
         <RadioButton Name="rdAPI" Grid.Column="2" Content="Database" HorizontalAlignment="Left" Margin="110,31,0,0" VerticalAlignment="Top" Checked="rdAPI_Checked" Height="15" Width="84"/>
         <ListBox Name="lbshowbird" Grid.Column="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,51,10,0" SelectionChanged="lbshowbird_SelectionChanged"></ListBox>
 
-        <TextBlock Name="tbdescribebird" HorizontalAlignment="Left" Height="196" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="380" Grid.ColumnSpan="2" Margin="12,56,0,0"/>
+        <TextBlock Name="tbdescribebird" HorizontalAlignment="Left" Height="121" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="380" Grid.ColumnSpan="2" Margin="12,56,0,0">
+            <TextBlock.Style>
+                <Style>
+                    <Setter Property="TextBlock.FontFamily" Value="Trebuchet MS"/>
+                </Style>
+            </TextBlock.Style>
+
+        </TextBlock>
         <RadioButton Name="rdUserMade" Grid.Column="2" Content="UserCreated" HorizontalAlignment="Left" Margin="200,31,0,0" VerticalAlignment="Top" Checked="rdUserMade_Checked" Height="15" Width="115"/>
         <RadioButton Name="rdAll" Grid.Column="2" Content="All" HorizontalAlignment="Left" Margin="15,31,0,0" VerticalAlignment="Top" Checked="rdAll_Checked" Height="15" Width="65"/>
         <Button Name="btndelbird" Grid.Column="2" Content="Delete an entry" HorizontalAlignment="Left" Margin="84,194,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Click="btndelbird_Click" Width="136"/>

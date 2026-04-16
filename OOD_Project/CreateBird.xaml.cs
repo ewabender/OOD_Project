@@ -24,9 +24,10 @@ namespace OOD_Project
 
     public partial class CreateBird : Window
     {
-        Bird b1 = new Bird();
+        //vars and bits for the program
 
         public string filename;
+
         string insertnum;
         BirdData db = new BirdData();
 
@@ -43,7 +44,7 @@ namespace OOD_Project
 
         private void btnback_Click(object sender, RoutedEventArgs e)
         {
-
+            //returns to bird viewing window
             this.Close();
 
         }
@@ -156,41 +157,38 @@ namespace OOD_Project
 
         private void tbxCommonname_GotFocus(object sender, RoutedEventArgs e)
         {
-            // Source - https://stackoverflow.com/a/6972726
-            // Posted by Donut
-            // Retrieved 2026-04-15, License - CC BY-SA 3.0
-        
-            TextBox tb = (TextBox)sender;
-            tb.Text = string.Empty;
-            tb.GotFocus -= tbxCommonname_GotFocus;
+            ClearText(sender, e);
         }
 
         private void tbxScientificName_GotFocus(object sender, RoutedEventArgs e)
         {
-            TextBox tb = (TextBox)sender;
-            tb.Text = string.Empty;
-            tb.GotFocus -= tbxScientificName_GotFocus;
+            ClearText(sender,e);
         }
 
         private void tbxwhere_GotFocus(object sender, RoutedEventArgs e)
         {
-            TextBox tb = (TextBox)sender;
-            tb.Text = string.Empty;
-            tb.GotFocus -= tbxwhere_GotFocus;
+            ClearText(sender, e);
         }
 
         private void tbxwhen_GotFocus(object sender, RoutedEventArgs e)
         {
-            TextBox tb = (TextBox)sender;
-            tb.Text = string.Empty;
-            tb.GotFocus -= tbxwhen_GotFocus;
+            ClearText(sender, e);
         }
 
         private void tbxhowmany_GotFocus(object sender, RoutedEventArgs e)
         {
+            ClearText(sender, e);
+        }
+
+        static void ClearText(object sender,RoutedEventArgs e) 
+        {
+            // Source - https://stackoverflow.com/a/6972726
+            // Posted by Donut
+            // Retrieved 2026-04-15, License - CC BY-SA 3.0
+            //clears the box 
             TextBox tb = (TextBox)sender;
             tb.Text = string.Empty;
-            tb.GotFocus -= tbxwhen_GotFocus;
+            tb.GotFocus -= ClearText;
         }
     }
 }

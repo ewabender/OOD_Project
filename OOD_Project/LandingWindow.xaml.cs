@@ -14,7 +14,6 @@ namespace OOD_Project
     /// </summary>
     public partial class LandingWindow : Window
     {
-        public ObservableCollection<Bird> AllBirds = new ObservableCollection<Bird>();
 
         private BirdData db;
 
@@ -25,21 +24,6 @@ namespace OOD_Project
 
         void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //string apiKey = "31ichicpcbi7";
-
-            //EbirdClient client = new EbirdClient(apiKey);
-
-            //string json = await client.GetRecentObservations("IE"); // IE = Ireland
-
-
-            //AllBirds = JsonSerializer.Deserialize<ObservableCollection<Bird>>(json);
-
-
-            //Bird b1 = new Bird() { speciesCode = "yee yee", comName = "Berd", sciName = "Stinky Stinky", howMany = 42, userBird = true, birdImage = @"C:\Users\EwaBender-STUDENT\Source\Repos\OOD_Project\OOD_Project\Images\kittuh.png" };
-            //AllBirds.Add(b1);
-
-            //Bird b2 = new Bird() { speciesCode = "what what", comName = "Elsa", sciName = "Frozen Frozen", howMany = 62, userBird = true, birdImage = @"C:\\Users\\EwaBender-STUDENT\\Source\\Repos\\OOD_Project\\OOD_Project\\Images\\OIP.jpg" };
-            //AllBirds.Add(b2);
 
             db = new BirdData();
 

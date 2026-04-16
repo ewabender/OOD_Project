@@ -7,8 +7,16 @@ namespace BirdTest
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void CreateBird()
         {
+            Bird
+            //Test
+
+            //Setup
+
+            //Assert
+            Assert.
+
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using OOD_Project;
 
 namespace BirdTest
 {
@@ -9,13 +10,17 @@ namespace BirdTest
         [TestMethod]
         public void CreateBird()
         {
-            Bird
+            Bird bird = new Bird();
             //Test
-
+            bird.userBird = true;
+            bird.sciName = "Testicus Unitus";
+            bird.comName = "Test Birb";
+            bird.howMany = 1;
+            bird.locName = " Tesco";
             //Setup
 
             //Assert
-            Assert.
+            Assert.IsNotNull(bird);
 
         }
     }
